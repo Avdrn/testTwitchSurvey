@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Header from './components/Header.js'
+import Streams from './components/Streams'
+import ChannelVideo from './components/ChannetVideo'
+import {Route, Switch} from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  render() {
+
+    // var express = require('express');
+    // var cors = require('cors');
+    // var app = express();
+
+    // app.use(cors());
+
+    return (
+      <div className="App">
+        <Header></Header>
+      
+        <Switch>
+          <Route exact path="/" component={Streams} /> 
+          <Route path="/:_id" component={ChannelVideo} />  
+        </Switch>
+      </div>
+    );
+  }
 }
 
 export default App;
