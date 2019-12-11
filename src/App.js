@@ -10,14 +10,8 @@ import DisplayVideo from './components/DisplayVideo'
 class App extends Component {
   render() {
 
-    // var express = require('express');
-    // var cors = require('cors');
-    // var app = express();
-
-    // app.use(cors());
-
     return (
-      <div className="App">
+      <div>
         <Header></Header>
       
         <Switch>

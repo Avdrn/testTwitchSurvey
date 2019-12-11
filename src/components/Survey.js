@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import '../Stylesheet/Survey.css';
+
 
 
 //In your react App.js or yourComponent.js file add these lines to import
@@ -133,14 +135,14 @@ export default class surveyComponent extends Component {
         var onCompleteComponent = this.state.isCompleted ? (
             <div>
                 <div>Thanks for completing the survey about this video. Not enought, you want to see another video? Click on next!</div>
-                 <button onclick="activateLasers()">
+                 <button className="ButtonNext" onClick="activateLasers()">
                     Next
                 </button>
             </div>
           
         ) : null;
         return (
-          <div>
+          <div className="Survey">
             {surveyRender}
             {onCompleteComponent}
           </div>

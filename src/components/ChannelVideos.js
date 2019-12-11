@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import api from "../api"
 import {Link} from "react-router-dom";
+import '../Stylesheet/Channel.css';
+
 
 
 export default class ChannelVideo extends Component {
@@ -31,21 +33,26 @@ export default class ChannelVideo extends Component {
   render() {
     return (
       <div>
+          <h1 className="Select">Select the Video you wanna watch</h1>
+      <div className="Channel-container">
         {this.state.videos ?
         <>
-        {this.state.videos.map((videoArray) => {
+        {this.state.videos.map((videoArray, key) => {
           return (
-          <Link to={`/DisplayVideo/${videoArray._id}`} >
-              <div>
-                <h3>{videoArray.channel.display_name}</h3>
-                <img src={videoArray.preview.medium} alt="vidPreview"/>
-              </div>
-          </Link> 
+          <div key={key} className="Channel-box">
+            <Link to={`/DisplayVideo/${videoArray._id}`} >
+                <div>
+                  <h3 className="Channel-title">{videoArray.title}</h3>
+                  <img src={videoArray.preview.medium} alt="vidPreview"/>
+                </div>
+            </Link> 
+          </div>
           )
         })}
         </>
         : null}
 
+      </div>
       </div>
     )
 }

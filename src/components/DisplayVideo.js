@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import Survey from './Survey'
+import Survey from './Survey';
+import '../Stylesheet/DisplayVideo.css';
+
 
  
 export default class DisplayVideo extends Component {
@@ -22,17 +24,23 @@ export default class DisplayVideo extends Component {
     
      render() {
         return (
-            <div>
-                <iframe
-                    title="video"
-                    src={`https://player.twitch.tv/?video=${this.state.videoId}`}
-                    height="<height>"
-                    width="<width>"
-                    frameBorder="<frameborder>"
-                    scrolling="<scrolling>"
-                    allowFullScreen="<allowfullscreen>">
-                </iframe>
+            <div className = "VideoAndSurvey">
+              <div className="Video">
+                <iframe 
+                      className="Video"
+                      title="video"
+                      src={`https://player.twitch.tv/?video=${this.state.videoId}`}
+                      height="<height>"
+                      width="<width>"
+                      frameBorder="<frameborder>"
+                      scrolling="<scrolling>"
+                      allowFullScreen="<allowfullscreen>">
+                  </iframe>
+              </div>
+              
+              <div className="Survey">
                 <Survey></Survey>
+              </div>
                 
             </div>
   )
