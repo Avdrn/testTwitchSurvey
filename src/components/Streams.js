@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {Link} from "react-router-dom";
 import api from "../api"
 import '../Stylesheet/Streams.css';
-import { loadProgressBar } from 'axios-progress-bar'
+import { loadProgressBar } from 'axios-progress-bar';
 
 loadProgressBar()
 
@@ -29,7 +29,7 @@ export default class Streams extends Component {
         singleStream: response.data.streams.slice(0, 1),
 
       })
-      console.log(response.data.streams)
+      console.log(this.state.streams)
       console.log(this.state.singleStream)
       console.log(this.state.firstIndex)
       console.log(this.state.secondIndex)
@@ -77,7 +77,7 @@ export default class Streams extends Component {
       {this.state.streams.map((streamsArray, key) => {
         return (
           <div key={key} className="Stream-box">
-          <Link to={`/${streamsArray.channel._id}`} >
+          <Link to={`/Channel/${streamsArray.channel._id}`} >
               <h2>{streamsArray.game}</h2>
               <table>
                 <thead>

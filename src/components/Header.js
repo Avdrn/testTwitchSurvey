@@ -6,10 +6,14 @@ import '../Stylesheet/Header.css';
 const header = () => {
   return (
     <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <h1 className="App-title">Welcome to Stream Hatchet Mturk Survey</h1>
+      <div className="App-underHeader">
+        <h1 className="App-title">Welcome to <img src={logo} className="App-logo" alt="logo" /> Mturk Survey</h1>
+      </div>
+    
+    <div>
       <h3>You are ready to take this to the next level!</h3>
-    </header>
+    </div>
+   </header>
   );
 }
 
